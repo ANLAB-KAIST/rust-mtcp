@@ -8,15 +8,15 @@ pipeline {
                 sh "rustup component add rustfmt"
             }
         }
-        stage ("Check") {
-            steps {
-                sh "rustfmt --check build.rs src/test.rs src/lib.rs"
-            }
-        }
         stage ("Build") {
             steps {
                 sh "cargo build"
                 sh "cargo run"
+            }
+        }
+        stage ("Check") {
+            steps {
+                sh "rustfmt --check build.rs src/test.rs src/lib.rs"
             }
         }
     }
