@@ -30,5 +30,7 @@ RUN chmod -R a+w ${RUSTUP_HOME} ${CARGO_HOME}
 # Recover env and verify
 RUN rustup --version
 
+# For rust-dpdk
+RUN apt install -y libclang-dev clang
 # For rust-mtcp
 RUN apt install -y libgmp-dev
