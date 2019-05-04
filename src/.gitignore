@@ -1,0 +1,4 @@
+*
+!.gitignore
+!test.rs
+!lib.rs
